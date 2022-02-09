@@ -1,0 +1,28 @@
+{
+  "name": "tictactoe-bot",
+  "version": "1.0.0",
+  "description": "Tic Tac Toe BOT",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "uvu ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fikryfahrezy/tictactoe-bot.git"
+  },
+  "keywords": [
+    "TicTacToe",
+    "BOT",
+    "TicTacToeBOT"
+  ],
+  "author": "fikryfahrezy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fikryfahrezy/tictactoe-bot/issues"
+  },
+  "homepage": "https://github.com/fikryfahrezy/tictactoe-bot#readme",
+  "dependencies": {
+    "uvu": "^0.5.3"
+  }
+}
