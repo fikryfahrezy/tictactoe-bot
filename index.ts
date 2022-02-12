@@ -24,7 +24,7 @@ const defScore = 1;
 const isMovesLeft = function (board: Board) {
 	for (let i = 0; i < 3; i++) {
 		for (let j = 0; j < 3; j++) {
-			if (board[i][j] === '_') {
+			if (board[i][j] === '') {
 				return true;
 			}
 		}
@@ -181,7 +181,7 @@ const minimax = function (
 		for (let i = 0; i < 3; i++) {
 			for (let j = 0; j < 3; j++) {
 				// Check if cell is empty
-				if (board[i][j] === '_') {
+				if (board[i][j] === '') {
 					// Make the move
 					// board[i][j] = x.toLowerCase();
 					// board[i][j] = o.toLowerCase();
@@ -192,7 +192,7 @@ const minimax = function (
 					best = Math.max(best, minimax(board, depth + 1, !isMax, isX));
 
 					// Undo the move
-					board[i][j] = '_';
+					board[i][j] = '';
 				}
 			}
 		}
@@ -208,7 +208,7 @@ const minimax = function (
 	for (let i = 0; i < 3; i++) {
 		for (let j = 0; j < 3; j++) {
 			// Check if cell is empty
-			if (board[i][j] === '_') {
+			if (board[i][j] === '') {
 				// Make the move
 				// board[i][j] = o.toLowerCase();
 				// board[i][j] = x.toLowerCase();
@@ -219,7 +219,7 @@ const minimax = function (
 				best = Math.min(best, minimax(board, depth + 1, !isMax, isX));
 
 				// Undo the move
-				board[i][j] = '_';
+				board[i][j] = '';
 			}
 		}
 	}
@@ -243,7 +243,7 @@ export const findBestMove = function (board: Board, isX: boolean) {
 	for (let i = 0; i < 3; i++) {
 		for (let j = 0; j < 3; j++) {
 			// Check if cell is empty
-			if (board[i][j] === '_') {
+			if (board[i][j] === '') {
 				// Make the move
 				// board[i][j] = x.toLowerCase();
 				// board[i][j] = o.toLowerCase();
@@ -254,7 +254,7 @@ export const findBestMove = function (board: Board, isX: boolean) {
 				const moveVal = minimax(board, 0, false, isX);
 
 				// Undo the move
-				board[i][j] = '_';
+				board[i][j] = '';
 
 				// If the value of the current move
 				// is more than the best value, then

@@ -7,7 +7,7 @@ test('Move X to Row 2 Col 2', () => {
 	const board: Board = [
 		['x', 'o', 'x'],
 		['o', 'o', 'x'],
-		['_', '_', '_'],
+		['', '', ''],
 	];
 
 	const bestMove = findBestMove(board, true);
@@ -20,7 +20,7 @@ test('Move O to Row 2 Col 1', () => {
 	const board: Board = [
 		['x', 'o', 'x'],
 		['o', 'o', 'x'],
-		['_', '_', '_'],
+		['', '', ''],
 	];
 
 	const bestMove = findBestMove(board, false);
@@ -33,7 +33,7 @@ test('Calculate X winner', () => {
 	const board: Board = [
 		['x', 'o', 'x'],
 		['o', 'o', 'x'],
-		['_', '_', 'x'],
+		['', '', 'x'],
 	];
 
 	const winnerCoord = calculateWinner(board);
@@ -45,7 +45,7 @@ test('Calculate O winner', () => {
 	const board: Board = [
 		['x', 'o', 'x'],
 		['o', 'o', 'x'],
-		['_', 'o', '_'],
+		['', 'o', ''],
 	];
 
 	const winnerCoord = calculateWinner(board);
@@ -57,7 +57,7 @@ test('Result X winner coord', () => {
 	const board: Board = [
 		['x', 'o', 'x'],
 		['o', 'o', 'x'],
-		['_', '_', 'x'],
+		['', '', 'x'],
 	];
 
 	const winner = calculateWinner(board);
@@ -74,7 +74,7 @@ test('Calculate O winner', () => {
 	const board: Board = [
 		['x', 'o', 'x'],
 		['o', 'o', 'x'],
-		['_', 'o', '_'],
+		['', 'o', ''],
 	];
 
 	const winner = calculateWinner(board);
@@ -85,6 +85,18 @@ test('Calculate O winner', () => {
 		{row: 1, col: 1},
 		{row: 2, col: 1},
 	]);
+});
+
+test('Calculate no winner', () => {
+	const board: Board = [
+		['', '', ''],
+		['', '', ''],
+		['', '', ''],
+	];
+
+	const winner = calculateWinner(board);
+
+	assert.is(winner, null);
 });
 
 test.run();
