@@ -1,6 +1,6 @@
 {
 	"name": "tictactoe-bot",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "Tic Tac Toe BOT",
 	"type": "module",
 	"main": "./dist/index.cjs",
